@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36930.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaDeAdministracionDeNomina", "SistemaDeAdministracionDeNomina\SistemaDeAdministracionDeNomina.csproj", "{CBEFF287-A4AD-4788-BEF2-791C199313BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBEFF287-A4AD-4788-BEF2-791C199313BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBEFF287-A4AD-4788-BEF2-791C199313BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBEFF287-A4AD-4788-BEF2-791C199313BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBEFF287-A4AD-4788-BEF2-791C199313BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86883722-4C10-46CF-BCCE-48E234DC9B0B}
+	EndGlobalSection
+EndGlobal

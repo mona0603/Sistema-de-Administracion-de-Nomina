@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CBEFF287-A4AD-4788-BEF2-791C199313BC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SistemaDeAdministracionDeNomina</RootNamespace>
+    <AssemblyName>SistemaDeAdministracionDeNomina</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BCrypt-Net-Next, Version=4.2.0.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.2.0\lib\net472\BCrypt-Net-Next.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConceptType.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="DAO\ConceptsDAO.cs" />
+    <Compile Include="DAO\UsersDAO.cs" />
+    <Compile Include="Design\ADMINISTRATORS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\ADMINISTRATORS.Designer.cs">
+      <DependentUpon>ADMINISTRATORS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\DATACAPTURE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\DATACAPTURE.Designer.cs">
+      <DependentUpon>DATACAPTURE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\DELETE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\DELETE.Designer.cs">
+      <DependentUpon>DELETE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\FIRSTADMIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\FIRSTADMIN.Designer.cs">
+      <DependentUpon>FIRSTADMIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\INTERFACE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\INTERFACE.Designer.cs">
+      <DependentUpon>INTERFACE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\LOGIN.Designer.cs">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\PERIOD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\PERIOD.Designer.cs">
+      <DependentUpon>PERIOD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\PROFILE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\PROFILE.Designer.cs">
+      <DependentUpon>PROFILE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleType.cs" />
+    <Compile Include="Design\PAYROLLCAPTURE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\PAYROLLCAPTURE.Designer.cs">
+      <DependentUpon>PAYROLLCAPTURE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\UsersEntity.cs" />
+    <Compile Include="HasUsers.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportType.cs" />
+    <Compile Include="RoleLevel.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="UserControls\UC_Buttons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Buttons.Designer.cs">
+      <DependentUpon>UC_Buttons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Cards.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Cards.Designer.cs">
+      <DependentUpon>UC_Cards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Concepts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Concepts.Designer.cs">
+      <DependentUpon>UC_Concepts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Employees.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Employees.Designer.cs">
+      <DependentUpon>UC_Employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Excel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Excel.Designer.cs">
+      <DependentUpon>UC_Excel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Modules.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Modules.Designer.cs">
+      <DependentUpon>UC_Modules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Payroll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Payroll.Designer.cs">
+      <DependentUpon>UC_Payroll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Reports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Reports.Designer.cs">
+      <DependentUpon>UC_Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Toolbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Toolbar.Designer.cs">
+      <DependentUpon>UC_Toolbar.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Design\ADMINISTRATORS.resx">
+      <DependentUpon>ADMINISTRATORS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\DATACAPTURE.resx">
+      <DependentUpon>DATACAPTURE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\DELETE.resx">
+      <DependentUpon>DELETE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\FIRSTADMIN.resx">
+      <DependentUpon>FIRSTADMIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\INTERFACE.resx">
+      <DependentUpon>INTERFACE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\LOGIN.resx">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\PERIOD.resx">
+      <DependentUpon>PERIOD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\PROFILE.resx">
+      <DependentUpon>PROFILE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\UC_Buttons.resx">
+      <DependentUpon>UC_Buttons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Cards.resx">
+      <DependentUpon>UC_Cards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Concepts.resx">
+      <DependentUpon>UC_Concepts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Employees.resx">
+      <DependentUpon>UC_Employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Excel.resx">
+      <DependentUpon>UC_Excel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Modules.resx">
+      <DependentUpon>UC_Modules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Payroll.resx">
+      <DependentUpon>UC_Payroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Reports.resx">
+      <DependentUpon>UC_Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Toolbar.resx">
+      <DependentUpon>UC_Toolbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salary %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iniciar-sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contabilidad %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\simbolo-de-moneda-dolar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contabilidad %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\simbolo-de-moneda-dolar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salary %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circulo-rojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circulo-verde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circulo-celeste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carpeta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circulo-naranja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circulo-verde1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circulo-celeste2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circulo-celeste1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circulo-naranja1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrownaranja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circulo-naranja2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrowceleste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrowverde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circulo-amarillo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrowamarillo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circulo-amarillo4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circulo-amarillo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circulo-amarillo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrowverde1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar-usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar-usuario1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollarminus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\briefcase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-black-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marca-de-verificacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bin1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-black-symbol1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifying-glass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-arrow1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deshacer-flecha-circular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carga-en-la-nube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\007-gig-economy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\003-book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\006-accounting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\businessman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help-web-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unlocked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\locked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrow1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

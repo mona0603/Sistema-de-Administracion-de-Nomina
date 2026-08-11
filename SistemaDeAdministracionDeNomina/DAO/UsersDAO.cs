@@ -14,6 +14,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SistemaDeAdministracionDeNomina.DAO
 {
+    //Cambios a LINQ, proximamente se implementará un ORM para mejorar la eficiencia y legibilidad del código
     class UsersDAO
     {
         //1.
